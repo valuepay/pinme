@@ -1,0 +1,58 @@
+{% include "header.html" %}
+<div class="wrap_board">
+	{% include "profile_my.html" %}
+	<div id="collection_bar">
+	     <p id="bar_links">My favorite stuff</p>
+		 <div style="text-align:right;">
+			 <button style="width:200px;" class="button_edit">Edit collection</button></a>
+		 </div>
+    </div>
+    <div id="collection_board">
+		<div class="content_photo clearfix">
+					{% for pin in pin_list %}
+							<div class="post clearfix">
+								<div class="like_buttons">
+									<ul id="like_but">
+										<li class="like_buttons_design">
+											<a href="#"><img src="/static/images/like.png" alt="like" class="like_img">
+												Like
+											</a>
+										</li>
+										<li class="like_buttons_design">
+											<a href="#"><img src="/static/images/comment.png" alt="comment" class="like_img">
+												Comment
+											</a>
+										</li>
+										<li class="like_buttons_design">
+											<a href="#"><img src="/static/images/copy.png" alt="copy" class="like_img">
+												Copy
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="clip">
+									<a href="#">
+										<img src="/show_image/{{pin.img.id}}"  alt="green" class="clip_img">
+									</a>
+									<p>{{pin.alt}}</p>
+								</div>
+								<div class="clip_comments">
+									<a href="http://www.flickr.com">{{pin.alt}}flickr.com 
+									</a>
+								</div>
+							</div>
+					{% endfor %}
+		</div>
+	</div>
+</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('img').load(function(){
+					$(".content_photo").masonry();
+				});
+				$(".content_photo").masonry();
+							
+			});
+		</script>
+	</body>
+{% include "footer.html" %}

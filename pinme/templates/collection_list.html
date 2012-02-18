@@ -1,0 +1,35 @@
+{% include "header.html" %}
+<div class="wrap_board">
+	{% include "profile_my.html" %}
+	<div id="collection_bar">
+	     <p id="bar_links">
+         	<a href="#">Collections</a><span class="bar_links_nb">(1)</span>
+			<a href="#">Pins</a><span class="bar_links_nb">(2)</span>		
+			<a href="#">Like</a><span class="bar_links_nb">(3)</span>  
+		</p>
+		 <div style="text-align:right;">
+			 <button style="width:200px;" class="button_edit">Select Collection</button></a>
+		 </div>
+    </div>
+    <div id="collection_board">
+    	{% for collection in collection_list %}
+			<div class="my_collection_board">
+				<h3>{{collection.name}}</h3>
+				<div class="mini_board">
+					<a href="/angelines/favorite-places-spaces/" class="mini_board_link">
+	                    <img src="http://media-cdn.pinterest.com/upload/57209857736228243_OUytKj95_t.jpg" alt="Photo of a collection">
+	                    <img src="http://media-cdn.pinterest.com/upload/2814818487000488_DGHvJr2p_t.jpg" alt="Photo of a collection">
+	                    <img src="http://media-cdn.pinterest.com/upload/18014467229408067_EhbXQpCX_t.jpg" alt="Photo of a collection">
+	                    <img src="http://media-cdn.pinterest.com/upload/230246599669236753_IolqlmvL_t.jpg" alt="Photo of a collection">
+	                </a>
+	            </div>
+	            <div style="margin:5px 15px 5px 15px;">
+	            	<a href="/collection_edit/{{collection.id}}/"><button class="button_edit">Edit</button></a>
+	            </div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+<div class="cleardiv">
+</div>
+{% include "footer.html" %}

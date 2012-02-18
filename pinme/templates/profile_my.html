@@ -1,0 +1,35 @@
+	<div id="profile">
+		<h1>{{request.session.user.username}}</h1>
+		<p>
+			<a href="#">0
+			<span> followers</span></a>
+			<a href="#">11
+			<span> following</span></a>
+		</p>
+		<div id="profile_img">
+	       	<a href="#" class="link_img" target="_blank">
+	       		<img src="/static/tmp/images/angelina-jolie.jpg" alt="Profile Picture of Angelina">
+	       	</a>
+			<a href="/settings/">
+				<button class="button_edit">Edit Profile</button>
+			</a>
+    	</div>
+    	<ol class="list_activity">
+			<li>
+			    <a href="/pin/37436240622369122/" class="link_img">
+			        <img src="http://media-cdn.pinterest.com/upload/220606081716870518_GuJP7QT0_t.jpg" alt="user image">
+			    </a>
+			    Angelina repinned happy work space to 
+			    <a href="#">Favorite Places &amp; Spaces</a>.
+			    <span class="colorlight">just now</span>
+			</li>
+			<li>
+			    <a href="/pin/37436240622369120/" class="link_img">
+			        <img src="http://media-cdn.pinterest.com/upload/105060603777135638_TUGVEANf_t.jpg" alt="user image">
+			    </a>
+			    Angelina repinned . to 
+			    <a href="/natalles/favorite-places-spaces/">Favorite Places &amp; Spaces</a>.
+			    <span class="colorlight">just now</span>
+			</li>
+		</ol>
+	</div>

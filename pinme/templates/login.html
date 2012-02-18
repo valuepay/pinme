@@ -1,0 +1,31 @@
+{% include "header.html" %}
+<div id="login_layout">
+	<div id="login_sublayout">
+		<img src="/static/images/strip.png" alt="strip">
+		{% if error_message_list %}
+			{% for error_message in error_message_list %}
+				<div class="error_message">{{error_message}}</div>
+			{% endfor %}
+		{% endif %}
+		<form method="post" action="" class="login_signin">
+			{% csrf_token %}
+			<label>Username:</label>
+			<input type="text" value="" placeholder="Username" name="username"><br />
+			{{ form.username.errors }}
+			<label>Password:</label>
+			<input type="password" role="signin_password" placeholder="Password" name="password"><br />
+			{{ form.password.errors }}
+			<div class="last_singin">
+				<input type="submit" value="Login" name="commit" class="submit_button">
+				<a id="login_remind" href="/restore_password/">Forgot your password?</a>
+            </div>
+		</form>
+		<img src="/static/images/strip.png" alt="strip">
+	</div>
+</div> 
+{% include "footer.html" %}
+
+
+    
+    
+    

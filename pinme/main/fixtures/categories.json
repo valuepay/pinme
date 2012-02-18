@@ -1,0 +1,37 @@
+[
+  {
+    "model": "main.category",
+    "pk": 1,
+    "fields": {
+      "name": "Architecture"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 2,
+    "fields": {
+      "name": "Art"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 3,
+    "fields": {
+      "name": "Cars & Motorcycles"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 4,
+    "fields": {
+      "name": "Design"
+    }
+  },
+  {
+    "model": "main.category",
+    "pk": 5,
+    "fields": {
+      "name": "DIY & Crafts"
+    }
+  }
+]

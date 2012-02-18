@@ -1,0 +1,584 @@
+body{
+	background:url('/static/images/bg/bg.jpg');
+	margin:0;
+	font-family: "helvetica neue",arial,sans-serif;
+}
+div#header{
+	position: fixed; 
+	z-index: 100;
+	width:100%;
+	top:0;
+	height: 50px;
+	background-color: #EEE; 
+	box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 0 1px #fff, 0 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4);
+}
+div#label{
+	display: inline-block;
+	margin: 5px 0px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -100px;
+	color:#555;
+	font-size: 25px;
+	font-weight: bold;
+}
+/* ---------------------------- DROP DOWN MENU STARTS ------------------------------------- */
+.clear {clear:both} 
+/* remove the list style */
+div#main_menu{
+	position: absolute;
+	left: 60%;
+	top: 5px;
+	margin: 0px 0px 0px 50px;
+	min-width: 900px;
+	font-size: 20px;
+}
+#nav {
+    margin:0; 
+    padding:0; 
+    list-style:none;
+}   
+     
+    /* make the LI display inline */
+    /* it's position relative so that position absolute */
+    /* can be used in submenu */
+    #nav li {
+    	padding: 0px 10px;
+        float:left; 
+        display:block; 
+        min-width:70px; 
+        background:#EEE; 
+        position:relative;
+        z-index:500; 
+        margin:0 1px;
+    }
+    #nav li a.username{
+        min-width:200px; 
+	}
+
+    /* this is the parent menu */
+    #nav li a {
+        display:block; 
+        padding:8px 5px 0 5px; 
+        font-weight:700;  
+        height:28px; 
+        text-decoration:none; 
+        color:#555;
+    }
+ 
+    #nav li a:hover {
+		color:#000;
+    }
+     
+    /* you can make a different style for default selected value */
+/*     #nav a.selected { */
+/*         color:#f00; */
+/*     } */
+
+    #nav a.inactive {
+        color:#CCC;
+    }
+    #nav a:hover.inactive {
+        color:#CCC;
+    }
+
+        /* submenu, it's hidden by default */
+        #nav ul {
+            position:absolute; 
+            left:0; 
+            display:none; 
+            margin:0 0 0 -1px; 
+            padding:0; 
+            list-style:none;
+        }
+         
+        #nav ul li {
+            width:180px; 
+            float:left; 
+            border-top:1px solid #fff;
+        }
+         
+        /* display block will make the link fill the whole area of LI */
+        #nav ul a {
+            display:block;  
+            height:20px;
+            padding: 8px 5px; 
+            color:#666;
+        }
+         
+/*         #nav ul a:hover { */
+/*             text-decoration:underline;   */
+/*         } */
+ 
+/* fix ie6 small issue */
+/* we should always avoid using hack like this */
+/* should put it into separate file : ) */
+*html #nav ul {
+    margin:0 0 0 -2px;
+}
+
+/* ---------------------------- DROP DOWN MENU ENDS ------------------------------------- */
+a{
+	color:#000;
+	text-decoration:none;
+	font-weight:bold;
+}
+a:hover{
+	text-decoration:underline;
+	color:#D26;
+}
+h1{
+	text-align:center;
+	margin:0;
+/* 	color:#CD2229; */
+}
+#column_content{
+	margin-top: 50px;
+	margin-left: 100px;
+}
+div.content_photo{
+	width: 1128px;
+	margin: 20px auto;
+	background: transparent;
+	/*background: #fff;*/
+}
+
+div.content_photo  .clip_img{
+	min-width: 100%;
+	width:100%;
+	display: block;
+	clear:both;
+}
+div.clip{
+	background: #FFF;
+	padding: 15px;
+}
+div.clip_comments{
+	background: #EEE;
+	padding: 15px;
+}
+div.clip p{
+	margin:10px 0 0 0;
+	font-size: 11px;
+	color: #211922;
+}
+div.post{
+	float:left;
+	width: 260px;
+	margin: 10px;
+	clear:both;
+	border: 1px solid #BBB;
+	box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 0 1px #fff, 0 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4);
+
+}
+/*=============Design like-buttons===============*/
+div.post .like_buttons{
+	display: none; 
+	position: absolute;
+	z-index: 3;
+}
+div.post:hover .like_buttons{
+	display: block;
+}
+div.like_buttons{
+	left:0;
+	position:reletive;
+	width:100%;
+}
+ul#like_but{
+	padding-left:10px;
+}
+div.like_buttons li{
+	display:inline;
+}
+li.like_buttons_design{
+	padding:5px 7px 5px 5px;
+	margin-right:4px;
+	background: #F9F7F7;
+	border:1px solid #D5C7C7;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+li.like_buttons_design:hover{
+	border-bottom:1px solid #836464;
+	border-right:1px solid #836464;
+}
+li.like_buttons_design a{
+	color:#544F4F;
+	text-decoration:none;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.8);
+}
+div.content_photo .like_img{
+	position:reletive;
+	width:10px;
+	height:10px;
+	padding-left:2px;
+}
+/*=============*/
+#pepper_img{
+    height:30px; 
+	width: 30px; 
+    padding:5px 20px;
+    vertical-align: middle;
+}
+a.pin_button{
+	text-decoration:none;
+}
+/*=================Login====================*/
+#login_layout{
+	margin: 0 auto 50px;
+    margin-top:100px;
+}
+#login_sublayout{
+    -moz-user-select: none;
+    margin: 0 auto;
+    width: 650px;
+}
+form.login_signin{
+	width:100%;
+	margin-top:30px;
+	margin-left:60px;
+}
+div#login_sublayout p{
+	color: #8C7E7E;
+	font-weight:bold;
+	font-size: 25px;
+	margin-bottom: 5px;
+	text-align:center;
+}
+form.login_signin label{
+	color: #8C7E7E;
+	font-weight:bold;
+	font-size: 18px;
+	margin: 7px 0 7px 0;
+	min-width:175px;
+	display:inline-block;
+	vertical-align: top;
+}
+div.error_message{
+	color: #F51E1E;
+	font-size:18px;
+	text-align:center;
+}
+ul.errorlist li{
+	color:#F51E1E;
+	font-size:13px;
+}
+textarea#id_about{
+	height:40px;	
+}
+option, #id_category {
+	font-size:14px;
+}
+input[type="password"], input[type="text"], input[type="email"], select, textarea{
+    font-family: "helvetica neue",arial,sans-serif;
+    width:300px;
+    margin-bottom:20px;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#F6DEE6,EndColorStr=#FFFFFF);
+	background-image: -moz-linear-gradient(top,#F6DEE6 0,#FFFFFF 100%);
+	background-image: -ms-linear-gradient(top,#F6DEE6 0,#FFFFFF 100%);
+	background-image: -o-linear-gradient(top,#F6DEE6 0,#FFFFFF 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FFFFFF),color-stop(100%,#FFFFFF));
+	background-image: -webkit-linear-gradient(top,#F6DEE6 0,#FFFFFF 100%);
+	background-image: linear-gradient(to bottom,#F6DEE6 0,#FFFFFF 100%);
+    border-color: #DDDDDD #E1DFDF #D1CDCD;
+    border-style: solid;
+    border-width: 2px;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+	-webkit-box-shadow: 0 1px rgba(34, 25, 25, 0.15) inset, 0 1px rgba(255, 255, 255, 0.8);
+	font-size:14px;
+}
+ a#login_remind{
+    color: #8C7E7E;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    position: relative;
+    left:80px;
+    top: 30px;
+}
+a#login_remind:hover{
+    color: #DD2266;
+}
+div.last_singin .submit_button{
+	margin:10px 20px 30px 0px;
+	font-size:18px;
+	color:#fff;
+	padding:10px 20px 10px 20px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	background-origin: border-box;
+	box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4);
+	cursor:pointer;
+	border-color: #A52755 #A52755;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#DD2266,EndColorStr=#BB0044);
+	background-image: -moz-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -ms-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -o-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FF4488),color-stop(100%,#BB0044));
+	background-image: -webkit-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: linear-gradient(to bottom,#FF4488 0,#BB0044 100%);
+	float:left;
+}
+div.last_singin .submit_button:hover{
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#BB0044,EndColorStr=#FF4488);
+	background-image: -moz-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -ms-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -o-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#BB0044),color-stop(100%,#FF4488));
+	background-image: -webkit-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: linear-gradient(to bottom,#BB0044 0,#FF4488 100%);
+}
+/*=================upload_selected_images==========*/
+div#upload_confirmation_form{
+	width: 800px;
+	margin: 0 auto;
+	margin-top:60px;
+	padding: 20px;
+	border: 2px solid #BBB;
+	box-shadow: inset 0 1px #fff, 0 2px 3px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 0 1px #fff, 0 2px 3px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 0 1px #fff, 0 2px 3px rgba(34,25,25,0.4);
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
+div.data_container{
+	margin-bottom: 15px;
+	width: 100%;
+	background: #D8D5D2;
+	border: 2px solid #BBB;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	box-shadow: inset 0 2px #fff, 0 1px 3px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 0 2px #fff, 0 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 0 2px #fff, 0 1px 3px rgba(34,25,25,0.4);
+}
+div.upload_img{
+	float: left;
+	margin: 10px;
+	width: 200px;
+}
+div.uload_alt_description{
+	margin-top: 8px;
+	width: 560px;
+	float: left;
+}
+textarea.alt{
+	width:100%;
+	border: 2px solid #BBB;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;	
+	box-shadow: inset 0 2px #fff, 0 1px 3px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 0 2px #fff, 0 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 0 2px #fff, 0 1px 3px rgba(34,25,25,0.4);
+}
+img.upload_thumbnail{
+	width:100%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+}
+.cleardiv{
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+img.loader{
+	display: block;
+	padding: 1px;
+}
+button.save_btn{
+	margin: 10px 0px;
+	font-size:18px;
+	color:#fff;
+	float:right;
+	padding:5px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4);
+	cursor:pointer;
+	border-color: #A52755 #A52755;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#DD2266,EndColorStr=#BB0044);
+	background-image: -moz-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -ms-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -o-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FF4488),color-stop(100%,#BB0044));
+	background-image: -webkit-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: linear-gradient(to bottom,#FF4488 0,#BB0044 100%);
+}
+button.save_btn:hover{
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#BB0044,EndColorStr=#FF4488);
+	background-image: -moz-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -ms-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -o-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#BB0044),color-stop(100%,#FF4488));
+	background-image: -webkit-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: linear-gradient(to bottom,#BB0044 0,#FF4488 100%);
+}
+/*============Design collection list==================*/
+div.wrap_board{
+	position: relative;
+	width: auto;
+	min-width: 933px;
+	margin: 90px 20px 0 20px;
+}
+div#profile{
+	float: left;
+	width: 192px;
+	padding: 15px;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+	background-color: white;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	-moz-box-shadow: 0 1px 2px rgba(34,25,25,0.4);
+	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+}
+div#collection_bar{
+	margin-left: 237px;
+	position: relative;
+	min-height: 24px;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+	border: double rgba(34, 25, 25, 0.14);
+	border-width: 3px 0;
+	border-image: initial;
+}
+#profile h1{
+	margin: 0px;
+	font-weight: bold;
+	text-align:left;
+}
+.link_img img{
+	display: block;
+	max-width: 100%;
+}
+button.button_edit{
+	margin: 10px 0px;
+	font-size:18px;
+	color:#fff;
+	padding:5px;
+	width:100%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 1px 1px #fff, 1px 1px 2px rgba(34,25,25,0.4);
+	cursor:pointer;
+	border-color: #A52755 #A52755;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#DD2266,EndColorStr=#BB0044);
+	background-image: -moz-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -ms-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -o-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#FF4488),color-stop(100%,#BB0044));
+	background-image: -webkit-linear-gradient(top,#FF4488 0,#BB0044 100%);
+	background-image: linear-gradient(to bottom,#FF4488 0,#BB0044 100%);
+}
+button.button_edit:hover{
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#BB0044,EndColorStr=#FF4488);
+	background-image: -moz-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -ms-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -o-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#BB0044),color-stop(100%,#FF4488));
+	background-image: -webkit-linear-gradient(top,#BB0044 0,#FF4488 100%);
+	background-image: linear-gradient(to bottom,#BB0044 0,#FF4488 100%);
+}
+.list_activity{
+	padding-top: 10px;
+	border-top: 1px solid #E1DFDF;
+	padding-left: 0px;
+}
+.list_activity li{
+	display: block;
+	padding-bottom:5px;
+	font-size: 11px;
+	color: #221919;
+	overflow: hidden;
+}
+.list_activity li img{
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin: 0 6px 0;
+}
+.colorlight, .colorlight a{
+	color: #AD9C9C;
+}
+p#bar_links{
+	float:left;
+}
+p#bar_links a{
+	font-weight: 300;
+	font-size: 25px;
+}
+span.bar_links_nb{
+	margin-left:5px;
+	font-size: 25px;
+	color:#BB0044;
+}
+div#collection_board{
+	position: relative;
+	min-height: 500px;
+	margin-top: 15px;
+	margin-left: 237px;
+}
+div.my_collection_board{
+	position: static;
+	float: left;
+	width: 222px;
+	padding:0px ;
+	margin: 20px 10px 10px 0px;
+	background-color: white;
+	border: 1px solid #BBB;
+	box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4); 
+	-moz-box-shadow: inset 0 1px #fff, 0 1px 2px rgba(34,25,25,0.4); 
+	-webkit-box-shadow: inset 0 1px #fff, 0 1px 3px rgba(34,25,25,0.4);
+}
+.mini_board .mini_board_link{
+	display: block;
+	height: 200px;
+	background: url("/static/images/bg/mini_bg.png") 15px 9px no-repeat;
+	padding: 9px 2px 4px 15px;
+/*	padding: 9px 0 4px 15px;*/
+	overflow:hidden;
+	text-decoration:none;
+	
+}
+.mini_board .mini_board_link img {
+	float: left;
+    height: 61px;
+    margin: 0 4px 4px 0;
+    width: 61px;
+}
+h3{
+	margin:5px 0 2px 0;
+	font-size:18px;
+	text-align:center;
+}

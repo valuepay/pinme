@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Clipepper</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css">	
+		<link href="/static/css/pinme_style.css" rel="stylesheet" type="text/css">
+		<link href="/static/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+		<script type="text/javascript" src="/static/jquery/jquery.js"></script>
+		<script type="text/javascript" src="/static/jquery/masonry/jquery.masonry.js"></script>
+		<script type="text/javascript" src="/static/jquery/jquery.form.js"></script> 
+		<script type="text/javascript" src="/static/js/tools.js"></script> 
+	</head>
+		<script>
+			$(function(){
+				$('a.pin_button').attr('href',"javascript:void((function(){var e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://"+window.location.host+"/js/btn.js?r='+Math.random()*99999999);document.body.appendChild(e)})());")
+				$('#nav li').hover(
+					        function () {
+					            //show its submenu
+					            $('ul', this).slideDown(100);
+					 
+					        }, 
+					        function () {
+					            //hide its submenu
+					            $('ul', this).slideUp(100);         
+					        }
+				);				
+			})
+		
+		</script>
+	<body>
+		<div id="ErrorMessage" class="error-message">
+			{% if error_messages %}
+				{% for error in error_messages %}
+					{{ error }}
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div id="message"></div>
+		<div id="curtains"></div>
+		<div id="header">
+			<div id="label">
+				<a class="pin_button" href="" title="Clipper"><img src="/static/images/pepper.png" alt="Clipepper" id="pepper_img"></a>Clipepper
+			</div>
+			<div id="main_menu">
+				{% if request.session.user %}
+					{% include "menu_main.html" %}
+				{% else %}
+					{% include "menu_main_unlogged.html" %}
+				{% endif %}
+			</div>
+		</div>
+
+
+	
+	

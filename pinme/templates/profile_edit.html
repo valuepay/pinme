@@ -1,0 +1,49 @@
+{% include "header.html" %}
+<div id="login_layout">
+	<div id="login_sublayout">
+		<p>Edit Profile:</p>
+		<img src="/static/images/strip.png" alt="strip">
+		{% if error_message_list %}
+			{% for error_message in error_message_list %}
+				<div class="error_message">{{error_message}}</div>
+			{% endfor %}
+		{% endif %}
+		<form method="post" action="" class="login_signin">
+			{% csrf_token %}
+			<label>Email:</label>
+			{{ form.email }}
+			{{ form.email.errors }}
+			<br /><br />
+			<label>First Name:</label>
+			{{ form.first_name }}
+			{{ form.first_name.errors }}
+			<br /><br />
+			<label>Last Name:</label>
+			{{ form.last_name }}
+			{{ form.last_name.errors }}
+			<br /><br />
+			<label>Username:</label>
+			{{ form.username }}
+			{{ form.username.errors }}
+			<br /><br />
+			<label>About:</label>
+			{{ form.about }}
+			{{ form.about.errors }}
+			<br /><br />
+			<label>Web-site:</label>
+			{{ form.site }}
+			{{ form.site.errors }}
+			<br /><br />
+			<div class="last_singin">
+				<input type="submit" value="Save" name="commit" class="submit_button">
+            </div>
+		</form>
+		<img src="/static/images/strip.png" alt="strip">
+	</div>
+</div> 
+{% include "footer.html" %}
+
+
+    
+    
+    

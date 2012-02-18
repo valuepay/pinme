@@ -1,0 +1,67 @@
+{% include "header.html" %}
+<script language="javascript">
+	$(function(){
+//		$('img.loader').show();
+		$('img.loader').hide();
+//		$('img.loader').show();
+		
+		$('button.save_btn').click(function(){
+			$(this).hide().siblings('img.loader').show();
+			var data_container_div=this;
+			var data_container_div=this;
+			$.post('/save_selected_image/',
+					{
+						csrfmiddlewaretoken:'{{ csrf_token }}',
+						url:$('input#from_url').val(),
+						src:$(this).parent().parent().find('input.src').val(),
+						alt:$(this).parent().parent().find('textarea.alt').val(),
+						collection:$(this).parent().parent().find('select#id_collection').val()
+					},
+					function(data){
+						if (data=='ok'){
+							console.log($('.save_btn').length);
+							if ($('.save_btn').length>1){
+								$(data_container_div).parent().parent().slideUp('slow',function(){
+									$(this).remove();
+								})
+							}else{
+								window.location='/collection_pin_list/';
+//								$('body').load('/collections/');
+							}
+						}
+					}
+				);
+			return false;
+		});
+	});
+</script>
+
+<div id="upload_confirmation_form">
+	<form>
+<!-- 	<center> From URL: {{ from_url }}</center><br /> -->
+		<input id="from_url" type="hidden" value="{{ from_url }}" />
+		{% for key, an_img in img_dict.items %}
+				<div class="data_container">
+	<!-- 				SRC: {{ an_img.src }}<br /> -->
+					<div class="upload_img">
+							<input class="src" type="hidden" value="{{ an_img.src }}" />
+						<img class="upload_thumbnail" src="{{ an_img.src }}"> <br />
+					</div>
+					<div class="uload_alt_description">
+						<label>Collection:</label>
+						{{form.collection}}
+						<textarea class='alt' rows="7" cols="62">{{ an_img.alt }}</textarea> <br /><br />
+						<button class="save_btn">Save Image</button>
+						<img class="loader" src="/static/images/loader2.gif" alt="Saving..." /> 
+					</div>
+ 					<div class="cleardiv"></div>
+				</div>
+			<div class="cleardiv"></div>
+		{% endfor %}
+			</form>
+		<br />
+		<br />
+		<br />
+</div>
+<!-- 	POST:{{ output }}<br /> -->
+{% include "footer.html" %}
